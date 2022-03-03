@@ -17,8 +17,11 @@
 .side {
   
     width: 17%;
+    margin-right: 1rem;
     
 }
+
+
 
 .side .title {
     font-size: 13px;

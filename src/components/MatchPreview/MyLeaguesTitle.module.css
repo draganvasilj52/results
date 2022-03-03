@@ -1,13 +1,20 @@
-.paragraph{
+.paragraph {
     display: flex;
 }
 
 .league {
-    margin-bottom: 0;
+    padding: 4px 8px;
+    margin-bottom: 4px;
     font-size: 13px;
-
     cursor: pointer;
 }
-.league:hover{
+
+.league:hover {
     background-color: #c8cdcd;
 }
+
+
+.active-league {
+    background-color: #c8cdcd;
+}
+

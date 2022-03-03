@@ -1,10 +1,14 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useSelector} from 'react-redux'
 import MyLeaguesTitle from '../MatchPreview/MyLeaguesTitle'
 import DisplayItem from './DisplayItem'
 import classes from './Football.module.css'
+import LeaguesList from "../LeaguesList/LeaguesList";
+import MainContent from "../MainContent/MainContent";
 
 const Football = () => {
+    const [selectedLeague, setSelectedLeague] = useState('')
+
     const category = useSelector(state => state.creator.selectedCategory)
     const matches = useSelector(state => state.creator.matches)
 
@@ -26,40 +30,33 @@ const Football = () => {
 
     let previewData = prepareMatches();
 
-    const [selectedLeague, setSelectedLeague] = useState('')
 
     const handleClick = (item) => {
-      setSelectedLeague(item)        
+        setSelectedLeague(item)
     }
 
     useEffect(() => {
-      setSelectedLeague(null)
+        setSelectedLeague(null)
     }, [category])
 
-    const renderMatches = previewData.map((item,index) => {
-      if(selectedLeague){
+    const renderMatches = previewData.map((item, index) => {
+        if (selectedLeague) {
+            return (
+                selectedLeague === item.league && <DisplayItem key={index} item={item}/>
+            )
+        }
         return (
-          selectedLeague === item.league && <DisplayItem key={index} item={item}/>
-        ) 
-      } 
-      return (
-        <DisplayItem key={index} item={item}/>
-      )
-      })
-    
-      return (
+            <DisplayItem key={index} item={item}/>
+        )
+    })
+
+    return (
         <div className={classes.main}>
-
-          <div className={classes.side}>           
-            <p className={classes.title}>MY LEAGUES</p>       
-            {previewData.map((item,index) => <MyLeaguesTitle  onClick={handleClick} key={index} item={item.league}  />)}
-          </div>
-
-          <div className={classes.content}>
-            {renderMatches}  
-          </div>
-
-      </div>
+            <LeaguesList selectedLeague={selectedLeague} previewData={previewData} onClick={handleClick}/>
+            <MainContent>
+                {renderMatches}
+            </MainContent>
+        </div>
     )
 }
 

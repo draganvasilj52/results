@@ -14,6 +14,7 @@ const App = () => {
 
     <div className='main-wrapper'>
       <main className='main'>
+        {/*preimenovat komponentu*/}
         <Football />
       </main> 
     </div>

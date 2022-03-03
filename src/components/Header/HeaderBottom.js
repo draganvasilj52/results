@@ -23,7 +23,7 @@ const HeaderBottom = () => {
     <div className={classes.wrapper}>
       
       <div className={classes['left-content']}>
-        <p className={`${activeCategory === 'favorites' && classes['active'] }`} onClick={() => handleClick('favorites')}><AiTwotoneStar/> FAVORITES</p>
+        <p className={activeCategory === 'favorites' && classes['active'] } onClick={() => handleClick('favorites')}><AiTwotoneStar/> FAVORITES</p>
         <p className={`${activeCategory === 'football' && classes['active'] }`} onClick={() => handleClick('football')}><MdSportsSoccer/> FOOTBALL</p>
         <p className={`${activeCategory === 'basketball' && classes['active'] }`} onClick={() => handleClick('basketball')}><FaBasketballBall/> BASKETBALL</p>
         <p className={`${activeCategory === 'tennis' && classes['active'] }`} onClick={() => handleClick('tennis')}><BiTennisBall/> TENNIS</p>

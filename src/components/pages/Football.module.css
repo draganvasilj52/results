@@ -2,18 +2,36 @@
     background-color: #fff;
     border-radius: 0.5rem;
     display: flex;
-    width:50%;
     flex-direction: column;
-    padding: 1rem 0.75rem 0.25rem;
-    margin-top: 1.25rem;
+    width:60%;
     margin-bottom: 1.25rem;
-  
+    height: fit-content;
+    padding: 1rem 0.75rem 0.25rem;
+   
 }
-.render p{
-    cursor: pointer;
-    
+.main{
+    display: flex;  
+    width: 100%;
 
 }
-.render p:hover{
-    background-color: #eee;
+.side {
+  
+    width: 17%;
+    
 }
+
+.side .title {
+    font-size: 13px;
+    color: #00141e;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(0, 20, 30, 0.06);
+    margin: 0 0 12px;
+
+    padding-bottom: 8px;
+}
+.side .title p{
+    margin-bottom: 0;
+}
+
+
+

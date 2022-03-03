@@ -1,11 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import {useSelector} from 'react-redux'
+import MyLeaguesTitle from '../MatchPreview/MyLeaguesTitle'
 import DisplayItem from './DisplayItem'
 import classes from './Football.module.css'
 
 const Football = () => {
     const category = useSelector(state => state.creator.selectedCategory)
     const matches = useSelector(state => state.creator.matches)
+
     let matchesLocal = matches;
 
     const sportsSelected = matchesLocal.filter(item => item.category === category)
@@ -24,39 +26,40 @@ const Football = () => {
 
     let previewData = prepareMatches();
 
-    const [selectLeague, setSelectLeague] = useState('')
+    const [selectedLeague, setSelectedLeague] = useState('')
+
+    const handleClick = (item) => {
+      setSelectedLeague(item)        
+    }
+
+    useEffect(() => {
+      setSelectedLeague(null)
+    }, [category])
 
     const renderMatches = previewData.map((item,index) => {
-
-        if( item.league === selectLeague){
-          return (
-            <DisplayItem key={index} item={item}/>
-            )          
-        }
-      
-          return (
-            selectLeague === '' && <DisplayItem key={index} item={item}/>
-        )
-
+      if(selectedLeague){
+        return (
+          selectedLeague === item.league && <DisplayItem key={index} item={item}/>
+        ) 
+      } 
+      return (
+        <DisplayItem key={index} item={item}/>
+      )
       })
     
       return (
-        <div className={classes.content}>
-        
-        {category === 'football' && <div className={classes.render}>
-          <p onClick={() => setSelectLeague('English Premier League') }>English Premier League</p>
-          <p onClick={() => setSelectLeague('Bosnian Premier League') }>Bosnian Premier League</p>
-        </div>}
-  
-        {category === 'basketball' && <div className={classes.render}>
-          <p onClick={() => setSelectLeague('Bosnian Basketball League') }>Bosnian Basketball League</p>
-          <p onClick={() => setSelectLeague('Poland Basketball League') }>Poland Basketball League</p>
-         
-        </div>}
-  
-        {renderMatches}
-         
-        </div>
+        <div className={classes.main}>
+
+          <div className={classes.side}>           
+            <p className={classes.title}>MY LEAGUES</p>       
+            {previewData.map((item,index) => <MyLeaguesTitle  onClick={handleClick} key={index} item={item.league}  />)}
+          </div>
+
+          <div className={classes.content}>
+            {renderMatches}  
+          </div>
+
+      </div>
     )
 }
 

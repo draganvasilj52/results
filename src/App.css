@@ -11,16 +11,21 @@
 .main{
     display: flex;
     justify-content: center;
-    background-color: #eee;
-    
+    padding-top: 24px;
+    height: calc(100vh - 144.59px);
+    width: 80%;
     
 }
-.content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #eee;
-  
 
+@media screen and (max-width: 1200px) {
+    .main {
+        height: calc(100vh - 100.59px);
+    }
+}
+
+.main-wrapper{
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
 }
 

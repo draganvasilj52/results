@@ -17,6 +17,24 @@
  
 }
 
+@media screen and (max-width: 1200px) {
+    .left-content {
+      width: 80%;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+    .left-content {
+      width: 75%;
+    }
+}
+
+@media screen and (min-width: 1401px){
+    .left-content {
+      width: 50%;
+    }
+}
+
 .left-content p {
     margin-bottom: 0;
     cursor: pointer;

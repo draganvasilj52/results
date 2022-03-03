@@ -11,9 +11,13 @@ const App = () => {
     <div className='wrapper'>         
       <Header/>      
     </div>
-    <main className='main'>
-      <Football />
-    </main>    
+
+    <div className='main-wrapper'>
+      <main className='main'>
+        <Football />
+      </main> 
+    </div>
+      
 
     </Router>
   )

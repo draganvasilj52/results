@@ -1,20 +1,25 @@
 .paragraph {
-    display: flex;
+  display: flex;
 }
 
 .league {
-    padding: 4px 8px;
-    margin-bottom: 4px;
-    font-size: 13px;
-    cursor: pointer;
+  padding: 4px 8px;
+  font-size: 13px;
+
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.paragraph p {
+  margin-bottom: 0;
 }
 
 .league:hover {
-    background-color: #c8cdcd;
+  background-color: #c8cdcd;
 }
-
 
 .active-league {
-    background-color: #c8cdcd;
+  background-color: #c8cdcd;
 }
-

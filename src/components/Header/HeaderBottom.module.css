@@ -1,52 +1,61 @@
-.wrapper{
-    display: flex;
-    background-color: #001e28;
-    color: white;
-    align-items: center;
-    justify-content: space-between;
-    
+.wrapper {
+  display: flex;
+  background-color: #001e28;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.left-content{
-    display: flex;
-    width: 50%;
-    margin-top: 0.625rem;
-    justify-content: space-between;
-    padding-bottom: 0.625rem;
-
- 
+.left-content {
+  display: flex;
+  width: auto;
+  margin-top: 0.625rem;
+  justify-content: space-between;
+  padding-bottom: 0.625rem;
 }
-
+/*
 @media screen and (max-width: 1200px) {
-    .left-content {
-      width: 80%;
-    }
+  .left-content {
+    width: 80%;
+  }
 }
 
 @media screen and (min-width: 1201px) and (max-width: 1400px) {
-    .left-content {
-      width: 75%;
-    }
+  .left-content {
+    width: 75%;
+  }
 }
 
-@media screen and (min-width: 1401px){
-    .left-content {
-      width: 50%;
-    }
+@media screen and (min-width: 1401px) {
+  .left-content {
+    width: 50%;
+  }
 }
+*/
 
 .left-content p {
-    margin-bottom: 0;
-    cursor: pointer;
-    opacity: 0.7;
+  margin-bottom: 0;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-right: 20px;
 }
 
 .left-content p:hover {
-    opacity: 1;
-    transition: opacity 0.3s;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
 .active {
-    opacity: 1;
-    border-bottom: 0.188rem solid red;
+  opacity: 1;
+  border-bottom: 0.188rem solid red;
+}
+
+.span-counter {
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  background-color: #c8cdcd;
+  padding: 0.5px 2px;
+  color: #001e28;
+  min-width: 16px;
 }

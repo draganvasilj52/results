@@ -1,31 +1,22 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-   
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.wrapper{
-    background-color: #001e28;
+.wrapper {
+  background-color: #001e28;
 }
 
-.main{
-    display: flex;
-    justify-content: center;
-    padding-top: 24px;
-    height: calc(100vh - 144.59px);
-    width: 80%;
-    
+.main {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+  min-height: calc(100vh - 124.59px);
+  width: 80%;
 }
 
-@media screen and (max-width: 1200px) {
-    .main {
-        height: calc(100vh - 100.59px);
-    }
+.main-wrapper {
+  background-color: #eee;
+  display: flex;
+  justify-content: center;
 }
-
-.main-wrapper{
-    background-color: #eee;
-    display: flex;
-    justify-content: center;
-}
-

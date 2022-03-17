@@ -1,4 +1,4 @@
-import classes from '../pages/Football.module.css'
+import classes from '../pages/Score.module.css'
 import MyLeaguesTitle from '../MatchPreview/MyLeaguesTitle'
 import React from 'react'
 

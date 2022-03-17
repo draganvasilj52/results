@@ -11,7 +11,9 @@ const HeaderBottom = () => {
   const [activeCategory, setActiveCategory] = useState('football')
 
   const dispatch = useDispatch()
-  const counter = useSelector((state) => state.creator.counter)
+  const featuresLength = useSelector(
+    (state) => state.creator.selectedFeature.length
+  )
 
   const handleClick = (category) => {
     setActiveCategory(category)
@@ -22,29 +24,49 @@ const HeaderBottom = () => {
     <div className={classes.wrapper}>
       <div className={classes['left-content']}>
         <p
-          className={activeCategory === 'favorites' && classes['active']}
+          className={`${classes.alignment} ${
+            activeCategory === 'favorites' && classes['active']
+          }`}
           onClick={() => handleClick('favorites')}
         >
-          <AiTwotoneStar /> FAVORITES{' '}
-          <span className={classes['span-counter']}>{counter}</span>
+          <AiTwotoneStar
+            style={{ marginRight: '4px', width: '20px', height: '20px' }}
+          />
+          FAVORITES
+          <span className={classes['span-counter']}>{featuresLength}</span>
         </p>
         <p
-          className={`${activeCategory === 'football' && classes['active']}`}
+          className={`${classes.alignment} ${
+            activeCategory === 'football' && classes['active']
+          }`}
           onClick={() => handleClick('football')}
         >
-          <MdSportsSoccer /> FOOTBALL
+          <MdSportsSoccer
+            style={{ marginRight: '4px', width: '20px', height: '20px' }}
+          />
+          FOOTBALL
         </p>
         <p
-          className={`${activeCategory === 'basketball' && classes['active']}`}
+          className={`${classes.alignment} ${
+            activeCategory === 'basketball' && classes['active']
+          }`}
           onClick={() => handleClick('basketball')}
         >
-          <FaBasketballBall /> BASKETBALL
+          <FaBasketballBall
+            style={{ marginRight: '4px', width: '20px', height: '20px' }}
+          />
+          BASKETBALL
         </p>
         <p
-          className={`${activeCategory === 'tennis' && classes['active']}`}
+          className={`${classes.alignment} ${
+            activeCategory === 'tennis' && classes['active']
+          }`}
           onClick={() => handleClick('tennis')}
         >
-          <BiTennisBall /> TENNIS
+          <BiTennisBall
+            style={{ marginRight: '4px', width: '20px', height: '20px' }}
+          />
+          TENNIS
         </p>
       </div>
 

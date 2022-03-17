@@ -391,7 +391,6 @@ const initialState = {
     },
   ],
   selectedFeature: [],
-  counter: 0,
 }
 
 const footballSlice = createSlice({
@@ -402,21 +401,24 @@ const footballSlice = createSlice({
       state.selectedCategory = action.payload
     },
     getFeature(state, action) {
+      let newArray = []
+      newArray = [...state.selectedFeature]
+
       const matchPrew = action.payload
-      const exist = state.selectedFeature.find((x) => x.id === matchPrew.id)
+      const exist = newArray.find((x) => x.id === matchPrew.id)
       if (!exist) {
-        state.selectedFeature.push(matchPrew)
-        state.counter += 1
+        newArray.push(matchPrew)
       } else {
-        state.selectedFeature = state.selectedFeature.filter(
-          (x) => x.id !== exist.id
-        )
-        state.counter -= 1
+        newArray = newArray.filter(x => x.id !== exist.id)
       }
+      state.selectedFeature = [...newArray]
+    },
+    addMatch(state, action) {
+      state.matches.push(action.payload)
     },
   },
 })
 
-export const { getCategory, getFeature } = footballSlice.actions
+export const { getCategory, getFeature, addMatch } = footballSlice.actions
 
 export default footballSlice.reducer

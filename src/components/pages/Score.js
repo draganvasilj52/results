@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import DisplayItem from './DisplayItem'
-import classes from './Football.module.css'
+import classes from './Score.module.css'
 import LeaguesList from '../LeaguesList/LeaguesList'
 import MainContent from '../MainContent/MainContent'
 import Favorites from '../Favorites/Favorites'
 
-const Football = () => {
+const Score = () => {
   const [selectedLeague, setSelectedLeague] = useState('')
 
   const category = useSelector((state) => state.creator.selectedCategory)
@@ -24,7 +24,9 @@ const Football = () => {
     return distinctLeagues.map((liga) => {
       let match = matchesLocal.filter((match) => match.league === liga)
       let flags = match.map((x) => x.countryCode)
-      let flag = [...new Set(flags)]
+
+      let flag = flags[0]
+
       return {
         league: liga,
         matches: match,
@@ -57,7 +59,7 @@ const Football = () => {
         )
       )
     }
-    return <DisplayItem key={index} item={item} />
+    return <DisplayItem category={category} key={index} item={item} />
   })
 
   return (
@@ -68,15 +70,11 @@ const Football = () => {
         previewData={previewData}
       />
 
-      {category !== 'favorites' ? (
-        <MainContent>{renderMatches}</MainContent>
-      ) : (
-        <MainContent>
-          <Favorites />
-        </MainContent>
-      )}
+      <MainContent>
+        {category !== 'favorites' ? renderMatches : <Favorites />}
+      </MainContent>
     </div>
   )
 }
 
-export default Football
+export default Score

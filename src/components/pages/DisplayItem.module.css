@@ -6,7 +6,8 @@
 
 .title {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+
   background-color: #eee;
   border-radius: 0.5rem;
   font-size: 0.813rem;
@@ -16,6 +17,17 @@
 }
 .title p {
   margin-bottom: 0;
+}
+.title-left {
+  display: flex;
+  align-items: center;
+}
+
+.title-right {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-right: 5px;
 }
 
 .title p:hover {
@@ -79,9 +91,5 @@
   color: #c8cdcd;
 }
 .design:hover {
-  color: yellow;
-}
-
-.active-f {
-  color: yellow;
+  fill: yellow;
 }

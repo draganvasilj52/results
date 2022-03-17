@@ -6,14 +6,12 @@ import SignInModal from '../BootStrap/SignInModal'
 const HeaderMiddle = () => {
   return (
     <div className={classes.wrapper}>
-         
-            <h3 >FLASHSCORE</h3>
+      <h3>FLASHSCORE</h3>
 
-            <div className={classes.order}>
-                <SearchModal />
-                <SignInModal />
-            </div>
-          
+      <div className={classes.order}>
+        <SearchModal />
+        <SignInModal />
+      </div>
     </div>
   )
 }

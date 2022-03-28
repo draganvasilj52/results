@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './HeaderMiddle.module.css'
-import SearchModal from '../BootStrap/SearchModal'
-import SignInModal from '../BootStrap/SignInModal'
+
+import Search from '../Search/Search'
 
 const HeaderMiddle = () => {
   return (
@@ -9,8 +9,7 @@ const HeaderMiddle = () => {
       <h3>FLASHSCORE</h3>
 
       <div className={classes.order}>
-        <SearchModal />
-        <SignInModal />
+        <Search />
       </div>
     </div>
   )

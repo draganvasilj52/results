@@ -6,6 +6,7 @@ import { BiTennisBall } from 'react-icons/bi'
 import classes from './HeaderBottom.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategory } from '../../features/footballSlice'
+import { Link } from 'react-router-dom'
 
 const HeaderBottom = () => {
   const [activeCategory, setActiveCategory] = useState('football')
@@ -70,7 +71,9 @@ const HeaderBottom = () => {
         </p>
       </div>
 
-      <div>MORE</div>
+      <Link className={classes.navigate} to="/about">
+        <p style={{ fontSize: '10px', margin: '0px' }}>ABOUT</p>
+      </Link>
     </div>
   )
 }

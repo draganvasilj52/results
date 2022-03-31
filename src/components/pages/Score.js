@@ -12,6 +12,8 @@ const Score = () => {
   const category = useSelector((state) => state.creator.selectedCategory)
   const matches = useSelector((state) => state.creator.matches)
 
+  const userInput = useSelector((state) => state.creator.inputValue)
+
   let matchesLocal = matches
 
   const sportsSelected = matchesLocal.filter(
@@ -21,11 +23,27 @@ const Score = () => {
   const prepareMatches = () => {
     let leagues = sportsSelected.map((match) => match.league)
     let distinctLeagues = [...new Set(leagues)]
+    let filterMatches = matchesLocal.filter(
+      (match) =>
+        match.homeTeam.toLowerCase().includes(userInput) ||
+        match.awayTeam.toLowerCase().includes(userInput)
+    )
+
     return distinctLeagues.map((liga) => {
-      let match = matchesLocal.filter((match) => match.league === liga)
+      let match = filterMatches.filter((match) => match.league === liga)
+      // ovdje filterMatches, uvijek prva zastava
       let flags = match.map((x) => x.countryCode)
 
       let flag = flags[0]
+      console.log(flag)
+
+      if (match.length === 0) {
+        return {
+          league: '',
+          matches: '',
+          country: '',
+        }
+      }
 
       return {
         league: liga,
@@ -59,7 +77,11 @@ const Score = () => {
         )
       )
     }
-    return <DisplayItem category={category} key={index} item={item} />
+    return (
+      item.country && (
+        <DisplayItem category={category} key={index} item={item} />
+      )
+    )
   })
 
   return (

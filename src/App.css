@@ -20,3 +20,13 @@
   display: flex;
   justify-content: center;
 }
+
+.navigate {
+  text-decoration: none;
+  color: white;
+}
+
+.navigate:hover {
+  color: red;
+  transform: scale(1.03);
+}

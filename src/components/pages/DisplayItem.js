@@ -18,6 +18,7 @@ const DisplayItem = ({ item, category }) => {
 
         <div className={classes['title-right']}>
           <BsFillPlusSquareFill
+            cursor={'pointer'}
             fill="#001e28"
             size={'18px'}
             onClick={() => setShow(true)}

@@ -4,7 +4,6 @@
   color: white;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .left-content {
@@ -12,7 +11,6 @@
   width: auto;
   margin-top: 0.625rem;
   justify-content: space-between;
-
 }
 /*
 @media screen and (max-width: 1200px) {
@@ -41,7 +39,6 @@
   margin-right: 20px;
   padding-bottom: 10px;
   border-bottom: 0.188rem solid transparent;
-
 }
 
 .left-content p:hover {
@@ -71,4 +68,14 @@
   align-items: center;
   font-size: 10px;
   font-weight: 700;
+}
+
+.navigate {
+  text-decoration: none;
+  color: white;
+}
+
+.navigate:hover {
+  color: red;
+  transform: scale(1.03);
 }

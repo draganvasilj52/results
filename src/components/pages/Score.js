@@ -31,13 +31,13 @@ const Score = () => {
 
     return distinctLeagues.map((liga) => {
       let match = filterMatches.filter((match) => match.league === liga)
-      // ovdje filterMatches, uvijek prva zastava
+  
       let flags = match.map((x) => x.countryCode)
 
       let flag = flags[0]
       console.log(flag)
 
-      if (match.length === 0) {
+      if (!flag) {
         return {
           league: '',
           matches: '',

@@ -9,6 +9,7 @@ const AboutPage = () => {
       }}
     >
       <h4 style={{ marginTop: '50px' }}>This is fake Flashscore.</h4>
+      
     </div>
   )
 }

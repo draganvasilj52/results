@@ -35,7 +35,7 @@ const Score = () => {
       let flags = match.map((x) => x.countryCode)
 
       let flag = flags[0]
-      console.log(flag)
+
 
       if (!flag) {
         return {

@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import classes from './Search.module.css'
 import {
- 
   addSearchInputValue,
 } from '../../features/footballSlice'
 import { useDispatch } from 'react-redux'
@@ -19,19 +18,15 @@ const Search = () => {
  */
 
   const handleFilter = () => {
-   
-   dispatch(addSearchInputValue(text))
-  
+    
+   dispatch(addSearchInputValue(text)) 
   }
 
   const handleRef = () => {
-   
 
-    setActive(true)
+    setActive(true) 
     inputRef.current.focus()
 
-
-   
   }
 
   return (
@@ -40,7 +35,7 @@ const Search = () => {
       <input
       
       onBlur={() => setActive(false)}
-    //  onChange={(e) => dispatch(addSearchInputValue(e.target.value))}
+   //  onChange={(e) => dispatch(addSearchInputValue(e.target.value))}
      //  onChange={handleChange}
      ref={inputRef}
      onChange={e => setText(e.target.value)}

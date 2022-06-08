@@ -24,12 +24,4 @@ const App = () => {
 }
 
 export default App
-/* 
-1. program se raspada ako je null output?
-The optional chaining operator prevents throwing TypeError: Cannot read property 'name' of undefined.
-2. .?
-3. fetchActions
-4. button, open closed
-5. div u Route?
-6. padding u league Title
-*/
+

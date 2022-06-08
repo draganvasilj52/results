@@ -7,8 +7,8 @@ const Favorites = () => {
   console.log(favoriteMatches)
   return (
     <div>
-      {favoriteMatches.map((x) => (
-        <MatchPreview match={x} />
+      {favoriteMatches.map((x,index) => (
+        <MatchPreview match={x} key={index} />
       ))}
     </div>
   )
